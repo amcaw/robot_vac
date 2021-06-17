@@ -23,7 +23,8 @@ jobs:
           
       - name: execute py script
         run: python Robot_vaccin.py
-     - name: Commit files
+        
+      - name: Commit files
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
