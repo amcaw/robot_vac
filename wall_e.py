@@ -16,7 +16,7 @@ api = tweepy.API(auth)
 # Pop Belgium
 population_of_be = 9209116
 
-# How many blocks you want in progress bar, 15 works well with Twitter ▓▓▓▓▓░░░░░░░░░░
+# How many blocks you want in progress bar, 15 works well with Twitteer ▓▓▓▓▓░░░░░░░░░░
 bar_total = 20
 perc_per_bar = 100/bar_total
 
