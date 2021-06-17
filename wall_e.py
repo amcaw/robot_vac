@@ -13,6 +13,11 @@ auth = tweepy.OAuthHandler(SECRET1, SECRET2)
 auth.set_access_token(SECRET3, SECRET4)
 api = tweepy.API(auth)
 
+SECRET1 = os.environ.get("SECRET1")
+SECRET2 = os.environ.get("SECRET2")
+SECRET3 = os.environ.get("SECRET3")
+SECRET4 = os.environ.get("SECRET4")
+
 # Pop Belgium
 population_of_be = 9209116
 
@@ -54,11 +59,6 @@ def SourceAndSendTweet(stringToTweet):
     stringToTweet += 'Pop. de 18 ans et + au 01/01/2021 (provisoire)\n'
     print(stringToTweet)
     api.update_status(stringToTweet)
-
-SECRET1 = os.environ.get("SECRET1")
-SECRET2 = os.environ.get("SECRET2")
-SECRET3 = os.environ.get("SECRET3")
-SECRET4 = os.environ.get("SECRET4")
 
 stringToTweet = ''
 stringToTweet += AddDataToTweet('CumuleA','% de Belges ayant reçu au moins une dose: \n\n')
