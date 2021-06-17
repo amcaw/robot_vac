@@ -8,8 +8,8 @@ import tweepy
 from datetime import datetime
 
 # Twitter authorisation - you need to fill in your own API details (https://dev.twitter.com)
-auth = tweepy.OAuthHandler("secret1", "secret2")
-auth.set_access_token("secret3", "secret4")
+auth = tweepy.OAuthHandler("SECRET1", "SECRET2")
+auth.set_access_token("SECRET3", "SECRET4")
 api = tweepy.API(auth)
 
 # Pop Belgium
