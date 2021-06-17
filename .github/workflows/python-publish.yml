@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
           
       - name: execute py script
-        run: python Robot_vaccin.Py
+        run: python Robot_vaccin.py
           
       - name: commit files
         run: |
