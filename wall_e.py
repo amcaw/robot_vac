@@ -8,15 +8,15 @@ import pandas as pd
 import tweepy
 from datetime import datetime
 
-# Twitter authorisation - you need to fill in your own API details (https://dev.twitter.com)
-auth = tweepy.OAuthHandler(SECRET1, SECRET2)
-auth.set_access_token(SECRET3, SECRET4)
-api = tweepy.API(auth)
+CONSUMER_KEY = os.environ['CONSUMER_KEY']
+CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+ACCESS_TOKEN_SECRET = os.environ['ACCESS_TOKEN_SECRET']
 
-SECRET1 = os.environ.get("SECRET1")
-SECRET2 = os.environ.get("SECRET2")
-SECRET3 = os.environ.get("SECRET3")
-SECRET4 = os.environ.get("SECRET4")
+# Twitter authorisation - you need to fill in your own API details (https://dev.twitter.com)
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+api = tweepy.API(auth)
 
 # Pop Belgium
 population_of_be = 9209116
