@@ -10,6 +10,11 @@ jobs:
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
+        env:
+          SECRET1: ${{ secrets.SECRET1 }}
+          SECRET2: ${{ secrets.SECRET2 }}
+          SECRET3: ${{ secrets.SECRET3 }}
+          SECRET4: ${{ secrets.SECRET4 }}
 
       - name: setup python
         uses: actions/setup-python@v2
@@ -23,8 +28,3 @@ jobs:
           
       - name: execute py script
         run: python wall_e.py
-        env:
-          secret1: ${{ secrets.SECRET1 }}
-          secret2: ${{ secrets.SECRET2 }}
-          secret3: ${{ secrets.SECRET3 }}
-          secret4: ${{ secrets.SECRET4 }}
