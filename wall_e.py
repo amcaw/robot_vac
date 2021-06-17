@@ -7,9 +7,14 @@ import pandas as pd
 import tweepy
 from datetime import datetime
 
+consumer_key = 'SECRET1'
+consumer_secret = 'SECRET2'
+access_token = 'SECRET3'
+access_secret = 'SECRET4'
+
 # Twitter authorisation - you need to fill in your own API details (https://dev.twitter.com)
-auth = tweepy.OAuthHandler("SECRET1", "SECRET2")
-auth.set_access_token("SECRET3", "SECRET4")
+auth = tweepy.OAuthHandler("consumer_key", "consumer_secret")
+auth.set_access_token("access_token", "access_secret")
 api = tweepy.API(auth)
 
 # Pop Belgium
