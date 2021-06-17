@@ -5,7 +5,6 @@ on:
 
 jobs:
   build:
-    environment: CI
     runs-on: ubuntu-latest
     steps:
 
@@ -23,10 +22,10 @@ jobs:
           pip install -r requirements.txt
           
       - name: execute py script
-          env:
-            CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
-            CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
-            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-            ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        env:
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         run: python wall_e.py
         
