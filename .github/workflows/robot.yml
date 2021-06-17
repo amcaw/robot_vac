@@ -28,3 +28,4 @@ jobs:
           
       - name: execute py script
         run: python wall_e.py
+        
