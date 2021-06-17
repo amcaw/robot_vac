@@ -10,8 +10,11 @@ jobs:
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          secret1: ${{ secrets.SECRET1 }}
+          secret2: ${{ secrets.SECRET2 }}
+          secret3: ${{ secrets.SECRET3 }}
+          secret4: ${{ secrets.SECRET4 }}
         
 
       - name: setup python
