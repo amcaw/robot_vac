@@ -6,6 +6,7 @@
 import pandas as pd
 import tweepy
 from datetime import datetime
+import os
 
 SECRET1 = os.environ.get('SECRET1')
 SECRET1 = os.environ.get('SECRET1')
