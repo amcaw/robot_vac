@@ -26,7 +26,7 @@ date_to_check = (date.today() - timedelta(1)).isoformat()
 
 # GOV UK data source API:
 data_read = pd.read_csv(
-    'https://raw.githubusercontent.com/amcaw/robot_vac/main/data_vac.csv', delimiter=',')
+    'https://app.workbenchdata.com/workflows/145128/steps/step--_mQtXYubHPE/current-result-table.csv', delimiter=',')
 
 def AddDataToTweet(dataValue, textValue):
     dataToAdd = ''
