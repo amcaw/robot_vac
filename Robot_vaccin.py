@@ -5,7 +5,5 @@ df['CumulA'] = df['A'].cumsum().map('{0:g}'.format)
 df['CumulB'] = df['B'].cumsum().map('{0:g}'.format)
 df['CumulC'] = df['C'].cumsum().map('{0:g}'.format)
 df['CumuleA'] = df['CumulA'] + df['CumulC']
-df['CumuleB'] = df['CumulB'] + df['CumulC']
-df['Dose1'] = df['CumuleA].map('{0:g}'.format)
-df['Dose2'] = df['CumuleB].map('{0:g}'.format)        
+df['CumuleB'] = df['CumulB'] + df['CumulC']   
 df.to_csv("./result.csv")
