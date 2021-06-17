@@ -1,9 +1,8 @@
 name: Robot
 
 on:
-  schedule:
-  - cron: "30 12 * * *"
-
+  push:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
