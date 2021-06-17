@@ -8,10 +8,10 @@ import pandas as pd
 import tweepy
 from datetime import datetime
 
-SECRET1 = os.environ.get('SECRET1')
-SECRET2 = os.environ.get('SECRET2')
-SECRET3 = os.environ.get('SECRET3')
-SECRET4 = os.environ.get('SECRET4')
+SECRET1 = os.environ.get("SECRET1")
+SECRET2 = os.environ.get("SECRET2")
+SECRET3 = os.environ.get("SECRET3")
+SECRET4 = os.environ.get("SECRET4")
 
 # Twitter authorisation - you need to fill in your own API details (https://dev.twitter.com)
 auth = tweepy.OAuthHandler(SECRET1, SECRET2)
