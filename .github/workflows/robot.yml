@@ -23,10 +23,10 @@ jobs:
           pip install -r requirements.txt
           
       - name: execute py script
-        env:
-          SECRET1: ${{ secrets.SECRET1 }}
-          SECRET2: ${{ secrets.SECRET2 }}
-          SECRET3: ${{ secrets.SECRET3 }}
-          SECRET4: ${{ secrets.SECRET4 }}
+          env:
+            CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+            CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         run: python wall_e.py
         
