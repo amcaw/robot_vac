@@ -1,7 +1,7 @@
 name: Robot
 
 on:
-  push:
+  schedule:
   
 jobs:
   build:
