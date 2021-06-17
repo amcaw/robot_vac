@@ -6,4 +6,4 @@ df['CumuleB'] = df['B'].cumsum().map('{0:g}'.format)
 df['CumuleC'] = df['C'].cumsum().map('{0:g}'.format)
 df["A"] = df['CumuleA'] + df['CumuleC']
 df["B"] = df['CumuleB'] + df['CumuleC']
-df.to_csv("/result.csv")
+df.to_csv("./result.csv")
