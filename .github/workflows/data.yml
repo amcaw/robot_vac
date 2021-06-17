@@ -1,7 +1,8 @@
 name: Upload Python file
 
 on:
-  push
+  schedule:
+  - cron: "0 12 * * *"
 
 jobs:
   build:
