@@ -8,8 +8,8 @@ import tweepy
 from datetime import datetime
 
 # Twitter authorisation - you need to fill in your own API details (https://dev.twitter.com)
-auth = tweepy.OAuthHandler("{{SECRET1}}", "{{SECRET2}}")
-auth.set_access_token("{{SECRET3}}", "{{SECRET4}}")
+auth = tweepy.OAuthHandler("secret1", "secret2")
+auth.set_access_token("secret3", "secret4")
 api = tweepy.API(auth)
 
 # Pop Belgium
@@ -25,7 +25,7 @@ date_to_check = (date.today() - timedelta(1)).isoformat()
 
 # GOV UK data source API:
 data_read = pd.read_csv(
-    'https://app.workbenchdata.com/workflows/145128/steps/step--_mQtXYubHPE/current-result-table.csv', delimiter=',')
+    'https://raw.githubusercontent.com/amcaw/robot_vac/main/result.csv', delimiter=',')
 
 def AddDataToTweet(dataValue, textValue):
     dataToAdd = ''
