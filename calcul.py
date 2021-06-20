@@ -4,5 +4,5 @@ df = pd.pivot_table(df, index = 'DATE', columns = 'DOSE', values = 'COUNT', aggf
 df['CumulA'] = df['A'] + df ['C']
 df['CumulB'] = df['B'] + df ['C']
 df['CumuleA'] = df['CumulA'].cumsum().map('{0:g}'.format)
-df['CumuleB'] = df['CumulA'].cumsum().map('{0:g}'.format)
+df['CumuleB'] = df['CumulB'].cumsum().map('{0:g}'.format)
 df.to_csv("./result.csv")
