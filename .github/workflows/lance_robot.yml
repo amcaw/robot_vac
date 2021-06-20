@@ -1,8 +1,8 @@
 name: Robot
 
 on:
-  schedule:
-  - cron: "30 11 * * *"
+  push:
+
   
 jobs:
   build:
