@@ -1,8 +1,10 @@
 import pandas as pd
-df = pd.read_csv('https://epistat.sciensano.be/Data/COVID19BE_VACC.csv')
+from datetime import datetime
+df = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_VACC.csv')
 df = pd.pivot_table(df, index = 'DATE', columns = 'DOSE', values = 'COUNT', aggfunc = 'sum')
-df['CumulA'] = df['A'] + df ['C']
-df['CumulB'] = df['B'] + df ['C']
-df['CumuleA'] = df['CumulA'].cumsum().map('{0:g}'.format)
-df['CumuleB'] = df['CumulB'].cumsum().map('{0:g}'.format)
+df['CumuleA'] = df['A'].cumsum().map('{0:g}'.format)
+df['CumuleB'] = df['B'].cumsum().map('{0:g}'.format)
+df['CumuleC'] = df['C'].cumsum().map('{0:g}'.format)
+df["A"] = df['CumuleA'] + df['CumuleC']
+df["B"] = df['CumuleB'] + df['CumuleC']
 df.to_csv("./result.csv")
