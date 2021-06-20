@@ -7,4 +7,6 @@ df['CumuleB'] = df['B'].cumsum().map('{0:g}'.format).fillna(0)
 df['CumuleC'] = df['C'].cumsum().map('{0:g}'.format).fillna(0)
 df['DoseA'] = df['CumuleA'] + df['CumuleC']
 df['DoseB'] = df['CumuleB'] + df['CumuleC']
+df['DoseA'] = pd.to_numeric(df['DoseA'])
+df['DoseB'] = pd.to_numeric(df['DoseB])
 df.to_csv("./result.csv")
