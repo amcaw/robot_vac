@@ -51,7 +51,7 @@ def AddDataToTweet(dataValue, textValue):
 def SourceAndSendTweet(stringToTweet):
     stringToTweet += 'En date du '+str(date_to_check)+'\n'
     stringToTweet += 'Source : open data de Sciensano\n'
-    stringToTweet += 'Pop. de 18 ans et + au 01/01/2021 (provisoire)\n'
+    stringToTweet += 'Pop. de 18 ans et + au 01/01/2021\n'
     print(stringToTweet)
     api.update_status(stringToTweet)
 
