@@ -17,10 +17,9 @@ api = tweepy.API(auth)
 population_of_be = 9209116
 
 # How many blocks you want in progress bar, 15 works well with Twitteer ▓▓▓▓▓░░░░░░░░░░
-bar_total = 20
+bar_total = 15
 perc_per_bar = 100/bar_total
 
-# This sets date to 2 days ago, as there is a lag in government data reporting. API requests will fail if you request date which has no data yet
 from datetime import date, timedelta
 date_to_check = (date.today() - timedelta(1)).isoformat()
 
@@ -51,10 +50,11 @@ def AddDataToTweet(dataValue, textValue):
 def SourceAndSendTweet(stringToTweet):
     stringToTweet += 'En date du '+str(date_to_check)+'\n'
     stringToTweet += 'Source : open data de Sciensano\n'
+    stringToTweet += 'Pourcentages calculés sur la base de la pop. 18+ au 01/01/2021\n'
     print(stringToTweet)
     api.update_status(stringToTweet)
 
 stringToTweet = ''
-stringToTweet += AddDataToTweet('CumuleA','Belges de 18 ans et + : Au moins une dose \n\n')
-stringToTweet += AddDataToTweet('CumuleB','Belges de 18 ans et + : Totalement vaccinés: \n\n')
+stringToTweet += AddDataToTweet('CumuleA','Belges de 18 ans et + -> Au moins une dose \n\n')
+stringToTweet += AddDataToTweet('CumuleB','Belges de 18 ans et + -> Totalement vaccinés \n\n')
 SourceAndSendTweet(stringToTweet)
