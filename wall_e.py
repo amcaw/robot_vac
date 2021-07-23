@@ -8,7 +8,6 @@ import pandas as pd
 import tweepy
 from datetime import datetime
 
-# Twitter authorisation - you need to fill in your own API details (https://dev.twitter.com)
 auth = tweepy.OAuthHandler(os.environ['CONSUMER_KEY'], os.environ['CONSUMER_SECRET'])
 auth.set_access_token(os.environ['ACCESS_TOKEN'], os.environ['ACCESS_TOKEN_SECRET'])
 api = tweepy.API(auth)
@@ -16,14 +15,12 @@ api = tweepy.API(auth)
 # Pop Belgium
 population_of_be = 9209116
 
-# How many blocks you want in progress bar, 15 works well with Twitteer ▓▓▓▓▓░░░░░░░░░░
 bar_total = 15
 perc_per_bar = 100/bar_total
 
 from datetime import date, timedelta
 date_to_check = (date.today() - timedelta(1)).isoformat()
 
-# GOV UK data source API:
 data_read = pd.read_csv(
     'https://app.workbenchdata.com/workflows/145128/steps/step--_mQtXYubHPE/current-result-table.csv', delimiter=',')
 
@@ -54,6 +51,6 @@ def SourceAndSendTweet(stringToTweet):
     api.update_status(stringToTweet)
 
 stringToTweet = ''
-stringToTweet += AddDataToTweet('CumuleA','Belges de 18 ans et + -> Au moins une dose \n\n')
-stringToTweet += AddDataToTweet('CumuleB','Belges de 18 ans et + -> Totalement vaccinés \n\n')
+stringToTweet += AddDataToTweet('CumuleA','Equivalent de la population belge de 18 ans et + \n\n ayant reçu au moins une dose \n\n')
+stringToTweet += AddDataToTweet('CumuleB','totalement vaccinée \n\n')
 SourceAndSendTweet(stringToTweet)
