@@ -46,11 +46,11 @@ def AddDataToTweet(dataValue, textValue):
 
 def SourceAndSendTweet(stringToTweet):
     stringToTweet += 'En date du '+str(date_to_check)+'\n'
-    stringToTweet += 'Source : open data de Sciensano\n'
+    stringToTweet += 'Source : open data de Sciensano'
     print(stringToTweet)
     api.update_status(stringToTweet)
 
 stringToTweet = ''
-stringToTweet += AddDataToTweet('CumuleA','Equivalent de la population belge de 18 ans et plus \n ayant reçu au moins une dose \n\n')
+stringToTweet += AddDataToTweet('CumuleA','Equivalent de la population belge de 18 ans et plus\n\n ayant reçu au moins une dose \n\n')
 stringToTweet += AddDataToTweet('CumuleB','totalement vaccinée \n\n')
 SourceAndSendTweet(stringToTweet)
