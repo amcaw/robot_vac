@@ -21,6 +21,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
+      - name: lance calcul
+        run: python calcul.py
+        
+      - name: Commit files
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add --all
+          git commit -am "add data"
+          git push
+          
       - name: execute py script 
         env: 
           CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
