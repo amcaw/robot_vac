@@ -22,7 +22,7 @@ from datetime import date, timedelta
 date_to_check = (date.today() - timedelta(1)).isoformat()
 
 data_read = pd.read_csv(
-    'https://app.workbenchdata.com/workflows/145128/steps/step--_mQtXYubHPE/current-result-table.csv', delimiter=',')
+    'https://raw.githubusercontent.com/amcaw/robot_vac/main/result.csv', delimiter=',')
 
 def AddDataToTweet(dataValue, textValue):
     dataToAdd = ''
