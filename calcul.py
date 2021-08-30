@@ -5,6 +5,7 @@ df = df[df.AGEGROUP != '00-11']
 df = df[df.AGEGROUP != '12-15']
 df = df[df.AGEGROUP != '16-17']
 df = pd.pivot_table(df, index = 'DATE', columns = 'DOSE', values = 'COUNT', aggfunc = 'sum')
+df['C'] = df['C'].fillna(0)
 df['CumuleA'] = df['A'].cumsum()
 df['CumuleB'] = df['B'].cumsum()
 df['CumuleC'] = df['C'].cumsum()
