@@ -6,10 +6,13 @@ df = df[df.AGEGROUP != '12-15']
 df = df[df.AGEGROUP != '16-17']
 df = pd.pivot_table(df, index = 'DATE', columns = 'DOSE', values = 'COUNT', aggfunc = 'sum')
 df['C'] = df['C'].fillna(0)
+df['E'] = df['E'].fillna(0)
 df['CumuleA'] = df['A'].cumsum()
 df['CumuleB'] = df['B'].cumsum()
 df['CumuleC'] = df['C'].cumsum()
 df['CumuleC'] = df['CumuleC'].fillna(0)
+df['CumuleE'] = df['E'].cumsum()
+df['CumuleE'] = df['CumuleE'].fillna(0)
 df['A'] = df.apply(lambda x: x['CumuleA'] + x['CumuleC'], axis=1)
 df['B'] = df.apply(lambda x: x['CumuleB'] + x['CumuleC'], axis=1)
 df.to_csv("./result.csv")
