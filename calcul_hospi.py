@@ -1,3 +1,4 @@
+import pandas as pd
 df_hospi = pd.read_csv ('https://epistat.sciensano.be/Data/COVID19BE_HOSP.csv')
 df_hospi1 = df_hospi[['DATE', 'TOTAL_IN']]
 df_hospi2 = df_hospi[['DATE', 'TOTAL_IN_ICU']]
