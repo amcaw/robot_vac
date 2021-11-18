@@ -51,6 +51,8 @@ def SourceAndSendTweet(stringToTweet):
     api.update_status(stringToTweet)
 
 stringToTweet = ''
-stringToTweet += AddDataToTweet('A','Equivalent de la population belge de 18 ans et plus\n\nayant reçu au moins une dose: \n\n')
-stringToTweet += AddDataToTweet('B','totalement vaccinée: \n\n')
+stringToTweet += 'Pourcentage de la population adulte \n\n'
+stringToTweet += AddDataToTweet('A','Au moins une dose : \n\n')
+stringToTweet += AddDataToTweet('B','Totalement vaccinée : \n\n')
+stringToTweet += AddDataToTweet('E','Extra dose: \n\n')
 SourceAndSendTweet(stringToTweet)
