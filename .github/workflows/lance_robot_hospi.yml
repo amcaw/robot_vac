@@ -1,7 +1,8 @@
 name: Robot_hospi #yop
 
 on:
-  push:
+  schedule:
+  - cron: "0 06 * * 2-6"
   
 jobs:
   build:
