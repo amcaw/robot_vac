@@ -15,4 +15,5 @@ df['CumuleE'] = df['E'].cumsum()
 df['CumuleE'] = df['CumuleE'].fillna(0)
 df['A'] = df.apply(lambda x: x['CumuleA'] + x['CumuleC'], axis=1)
 df['B'] = df.apply(lambda x: x['CumuleB'] + x['CumuleC'], axis=1)
+df['E'] = df['CumuleE']
 df.to_csv("./result.csv")
