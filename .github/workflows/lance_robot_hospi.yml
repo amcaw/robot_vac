@@ -1,4 +1,4 @@
-name: Robot
+name: Robot_hospi
 
 on:
   push:
