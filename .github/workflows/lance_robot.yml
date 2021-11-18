@@ -1,7 +1,8 @@
 name: Robot
 
 on:
-  push:
+  schedule:
+  - cron: "0 12 * * 1-5"
   
 jobs:
   build:
@@ -31,3 +32,11 @@ jobs:
           git add --all
           git commit -am "add data"
           git push
+      
+      - name: execute py script 
+        env: 
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        run: python wall_e.py
