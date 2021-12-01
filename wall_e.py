@@ -54,5 +54,5 @@ stringToTweet = ''
 stringToTweet += 'Pourcentage de la population adulte \n\n'
 stringToTweet += AddDataToTweet('A','Au moins une dose : \n\n')
 stringToTweet += AddDataToTweet('B','Totalement vaccinée : \n\n')
-stringToTweet += AddDataToTweet('E','Extra dose : \n\n')
+stringToTweet += AddDataToTweet('E','Booster : \n\n')
 SourceAndSendTweet(stringToTweet)
