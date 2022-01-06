@@ -24,14 +24,14 @@ date_to_check = (date.today() - timedelta(1)).isoformat()
 data_read = pd.read_csv(
     'https://raw.githubusercontent.com/amcaw/robot_vac/main/result.csv', delimiter=',')
 
-def AddDataToTweet(dataValue, textValue):
+def AddDataToTweet(dataValue):
     dataToAdd = ''
     total_vacs = data_read.loc[data_read.DATE == date_to_check, dataValue].values[0]
     perc_rounded = round( ((total_vacs / population_of_be) * 100),2)
     solid_bars_to_print = perc_rounded // perc_per_bar
     empty_bars_to_print = bar_total - solid_bars_to_print
 
-    dataToAdd += textValue
+    dataToAdd
     while solid_bars_to_print > 0:
         dataToAdd += '▓'
         solid_bars_to_print -=1
